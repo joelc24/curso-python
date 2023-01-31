@@ -7,16 +7,19 @@ print('-'*100)
 
 while i > 0:
     number = int(input("¿Cual es el numero? \n"))
-    if number < 0:
-        print("Has digitado un numero no permitido \n por favor digite solo numeros positivos")
-    elif number < number_random:
-        print("El numero ingresado es menor al numero que pense")
-    elif number > number_random:
-        print("El numero ingresado es mayor al numero que pense")
+    if number in range(1, 100):
+        if number < 0:
+            print("Has digitado un numero no permitido \n por favor digite solo numeros positivos")
+        elif number < number_random:
+            print("El numero ingresado es menor al numero que pense")
+        elif number > number_random:
+            print("El numero ingresado es mayor al numero que pense")
+        else:
+            print(f"Has acertado!! \nTe tomo {8 - i} intentos")
+            break
+        i -= 1
     else:
-        print(f"Has acertado!! \nTe tomo {8 - i} intentos")
-        break
-    i -= 1
+        print("Numero fuera del rango")
 else:
     print("Game Over! 😢😢")
 
